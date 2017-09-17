@@ -26,14 +26,44 @@ void setup() {
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
+
+  /*
   digitalWrite(5, HIGH);
   digitalWrite(6, HIGH);
   digitalWrite(7, LOW);
   digitalWrite(8, HIGH);
-  
+  */
+
+  digitalWrite(8, HIGH); //draws circle of the smiley face
 }
 
 // the loop function runs over and over again forever
+
+// smiley face eyes and mouth
+void loop() {
+  for (int i = 0; i < 60; i++){
+    if (i == 8 || i == 52){
+      digitalWrite(7, HIGH);
+      }
+    else {
+      digitalWrite(7,LOW);
+      }
+    if (i > 20 && i < 40) {
+      digitalWrite(4, HIGH);
+    }
+    else {
+      digitalWrite(4, LOW);
+    }
+  unsigned long endOfSlice = previousTime + (revolutionTime*(i+1));
+
+    while (endOfSlice > micros()) {};
+//    delayMicroseconds(revolutionTime);
+  }
+
+  while (digitalRead(2) == 0) {}
+}
+
+/*
 void loop() {
   int led4 = 0;
   for (int i = 0; i < 16; i++) {
@@ -44,13 +74,14 @@ void loop() {
 //    delayMicroseconds(revolutionTime);
   }
 
-  while (digitalRead(2) == 0) {}
+  while (digitalRead(2) == 0) {} //waits for the halleffect sensor is read as 1
 }
+*/
 
 void hallInterrupt() {
   unsigned long t = micros();
   revolutionTime = t - previousTime;
   previousTime = t;
-  revolutionTime = revolutionTime / 16;
+  revolutionTime = revolutionTime / 60; //changed to 60 increments within a revolution
 }
 
