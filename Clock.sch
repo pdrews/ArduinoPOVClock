@@ -8830,7 +8830,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C19" library="SparkFun" deviceset="CAP_POL" device="1206" value="10uF"/>
 <part name="GND30" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND32" library="SparkFun" deviceset="GND" device=""/>
-<part name="JP7" library="SparkFun" deviceset="M02" device="PTH" value="External"/>
+<part name="JP7" library="SparkFun" deviceset="M02" device="PTH" value="Vin"/>
 <part name="GND11" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND4" library="SparkFun" deviceset="GND" device=""/>
 <part name="JP9" library="SparkFun" deviceset="ARDUINO_SERIAL_PROGRAM" device="SMD" value="Program"/>
